@@ -9,9 +9,15 @@ PACKER_VERSION="1.2.5"
 && ssh-keygen -f /home/ubuntu/.ssh/mykey -N '' \
 && chown -R ubuntu:ubuntu /home/ubuntu/.ssh
 
+# install GPG key from docker repository
+apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+
+# add docker repository 
+apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+
 # install packages
 apt-get update
-apt-get -y install docker.io ansible unzip postgresql-client
+apt-get -y install docker.io ansible unzip postgresql-client docker-engine
 # add docker privileges
 usermod -G docker ubuntu
 # install pip
