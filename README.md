@@ -6,3 +6,4 @@
 * AWS CLI
 * Ansible
 * Postgres Client
+* Docker
