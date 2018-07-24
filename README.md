@@ -5,3 +5,4 @@
 * Terraform
 * AWS CLI
 * Ansible
+* Postgres Client
