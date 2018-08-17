@@ -17,7 +17,15 @@ apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
 
 # install packages
 apt-get update
-apt-get -y --allow-unauthenticated install git ansible unzip postgresql-client docker-engine language-pack-pt
+apt-get -y --allow-unauthenticated install git ansible \
+unzip postgresql-client docker-engine language-pack-pt \
+openvpn locales
+
+locale-gen pt_BR
+
+echo "LANG=pt_BR" >> /etc/environment
+echo "LC_ALL=pt_BR" >> /etc/environment
+
 # add docker privileges
 usermod -G docker ubuntu
 # install pip
